@@ -555,21 +555,19 @@ function enviar() {
   const partes = fec.split('-');
   const fechaFmt = partes[2] + '/' + partes[1] + '/' + partes[0];
 
-  let msg = `▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n`;
-  msg += `*Aviso:* *${num}*\n`;
+  let msg = `*Aviso:* *${num}*\n`;
   msg += `*Técnico:* *${tec}*\n`;
   msg += `*Región:* *${reg}*\n`;
   msg += `*Fecha:* *${fechaFmt}*\n\n`;
   msg += `*Trabajo:* *${trab}*\n\n`;
 
   if (estado === 'fin') {
-    msg += `✅ *FIN*\n`;
+    msg += `✅ *FIN*`;
   } else {
     msg += `🔴 *HAY QUE VOLVER*\n`;
     msg += `*Motivo:* *${motivo}*\n`;
-    if (mat) msg += `*Material:* *${mat}*\n`;
+    if (mat) msg += `*Material:* *${mat}*`;
   }
-  msg += `▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`;
 
   const encoded = encodeURIComponent(msg);
   window.open(`https://wa.me/?text=${encoded}`, '_blank');
